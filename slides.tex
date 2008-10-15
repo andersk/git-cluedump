@@ -24,4 +24,23 @@
     \titlepage
 \end{frame}
 
+\section{The Git Model}
+
+\begin{frame}
+  \frametitle{The Git Model}
+
+  \begin{itemize}
+  \item A Git repository is a directed acyclic graph of
+    \emph{objects}.
+  \item An object is either a \emph{blob} (file), a \emph{tree}
+    (directory), a \emph{commit}, or a \emph{tag}.
+  \item Every object is uniquely identified by a 40 hex digit number,
+    which is the SHA-1 hash of its contents.
+    \begin{itemize}
+    \item Don't worry---identifiers can be abbreviated by truncation,
+      or referenced with human-readable names.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \end{document}
