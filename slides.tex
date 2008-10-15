@@ -103,48 +103,94 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Getting a Git repository}
+
+  \begin{description}[\texttt{git clone \textit{url}}]
+  \item[\texttt{git init}] Create an empty Git repository in the
+    current directory.  By default it will have one branch named
+    \texttt{master}.
+  \item[\texttt{git clone \textit{url}}] Clone the Git repository from
+    \texttt{\textit{url}}.  This may be over HTTP, SSH, or the Git
+    protocol, or it may be a path to another local repository.
+  \end{description}
+
+  Both of these operations will create a \emph{working copy}.
+\end{frame}
+
+\begin{frame}
   \frametitle{Working copy}
   \begin{itemize}
   \item Every working copy has its own Git repository in the
     \texttt{.git} subdirectory (with arbitrarily many branches and
     tags).
-  \item The most important ref is \texttt{HEAD}, which refers to the
-    current branch.
-  \item The working copy also has an \emph{index}: a staging area for
-    changes on top of \texttt{HEAD} that will become part of the next
-    commit.
-  \item Changes made to the working copy outside of \texttt{.git} can
-    be \emph{added} to the index.
-  \item The index can be \emph{committed} to the current branch (where
-    it will then become the new \texttt{HEAD}).
+    \begin{itemize}
+    \item The most important ref is \texttt{HEAD}, which refers to the
+      current branch.
+    \end{itemize}
+  \item The \texttt{.git} subdirectory also stores the \emph{index}: a
+    staging area for changes on top of \texttt{HEAD} that will become
+    part of the next commit.
+  \item Finally, the files outside of \texttt{.git} are the
+    \emph{working tree}.
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Basic Git commands}
+  \frametitle{Git workflow}
+  \begin{itemize}
+  \item Changes made to the working tree can be \emph{added} to the
+    index.
+  \item The index can be \emph{committed} to the current branch (where
+    it will then become the new \texttt{HEAD}).
+  \end{itemize}
 
+  \begin{center}
+    \includegraphics[width=9cm]{index}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Constructing commits}
   \begin{description}[\texttt{git show \textit{object}}]
-  \item[\texttt{git init}] Create a Git repository in the current
-    directory.  By default it will have one branch named
-    \texttt{master}.
   \item[\texttt{git add \textit{file}}] Add or update
-    \texttt{\textit{file}} into the index.
+    \texttt{\textit{file}} from the working tree into the index.
+  \item[\texttt{git reset \textit{file}}] Unstage changes to
+    \texttt{\textit{file}} in the index, without touching the working
+    copy.
+  \item[\texttt{git rm \textit{file}}] Delete \texttt{\textit{file}}
+    from the index and the working tree.
+  \item[\texttt{git status}] Display the files changed in the index
+    and in the working tree.
   \item[\texttt{git commit}] Make a commit out of the current index.
-  \item[\texttt{git log}] List the commits on the current branch.
-  \item[\texttt{git show \textit{object}}] Show an object (e.g. a commit).
   \end{description}
 \end{frame}
 
 \begin{frame}
-  \frametitle{\texttt{git diff}}
+  \frametitle{Displaying changes}
 
   \begin{description}[\texttt{git diff --cached}]
+  \item[\texttt{git log}] List the commits on the current branch.
+  \item[\texttt{git show \textit{object}}] Show an object (e.g. a commit).
   \item[\texttt{git diff}] Show the differences between the index and
-    the working copy.
+    the working tree.
   \item[\texttt{git diff --cached}] Show the differences between
     \texttt{HEAD} and the index.
   \item[\texttt{git diff \textit{commit}}] Show the differences
-    between \textit{commit} and the working copy.
+    between \textit{commit} and the working tree.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Manipulating branches}
+
+  \begin{description}[\texttt{git checkout -b \textit{branch}}]
+  \item[\texttt{git branch}] List the branches in your repository,
+    with the current branch highlighted.
+  \item[\texttt{git checkout \textit{branch}}] Switch to the branch
+    named \texttt{\textit{branch}}.  This updates \texttt{HEAD}, the
+    index, and the working tree.
+  \item[\texttt{git checkout -b \textit{branch}}] Create a new branch
+    named \texttt{\textit{branch}} and switch to it.
   \end{description}
 \end{frame}
 
