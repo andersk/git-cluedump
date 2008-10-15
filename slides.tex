@@ -44,6 +44,36 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Objects}
+
+  \begin{itemize}
+  \item A blob object is a file's contents.
+  \item A tree object is a directory---a list of zero or more
+    directory entries, each of which has
+    \begin{itemize}
+    \item a \emph{name}
+    \item a UNIX \emph{mode}
+    \item a tree id or blob id
+    \end{itemize}
+  \item A commit object contains
+    \begin{itemize}
+    \item a tree id
+    \item zero or more \emph{parents}, which are commit ids
+    \item an \emph{author} (name, email, date)
+    \item a \emph{committer} (name, email, date)
+    \item a \emph{log message}
+    \end{itemize}
+  \item A tag object contains
+    \begin{itemize}
+    \item a \emph{tag name}
+    \item a \emph{tagger} (name, email, date)
+    \item a reference to another object (usually a commit)
+    \item an optional \emph{log message}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{A commit}
   \hspace*{-0.5cm}\includegraphics[width=12cm]{commit}
 \end{frame}
