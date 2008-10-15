@@ -30,8 +30,7 @@
   \frametitle{The Git Model}
 
   \begin{itemize}
-  \item A Git repository is a directed acyclic graph of
-    \emph{objects}.
+  \item A Git repository contains four kinds of \emph{objects}.
   \item An object is either a \emph{blob} (file), a \emph{tree}
     (directory), a \emph{commit}, or a \emph{tag}.
   \item Every object is uniquely identified by a 40 hex digit number,
@@ -40,6 +39,7 @@
     \item Don't worry---identifiers can be abbreviated by truncation,
       or referenced with human-readable names.
     \end{itemize}
+  \item Some objects refer to other objects using their identifiers.
   \end{itemize}
 \end{frame}
 
@@ -81,6 +81,25 @@
 \begin{frame}
   \frametitle{More commits}
   \hspace*{-0.5cm}\includegraphics[width=12cm]{prctl}
+\end{frame}
+
+\begin{frame}
+  \frametitle{A Git repository}
+  \begin{itemize}
+  \item A Git repository is a collection of
+    \emph{refs}---\emph{branches} and \emph{tags}.
+  \item A ref is a named mutable pointer to an object (usually a
+    commit).
+    \begin{itemize}
+    \item \texttt{HEAD} $\to$ \texttt{refs/heads/master}
+    \item \texttt{refs/heads/master} $\to$ \texttt{commit fec6ed\ldots}
+    \item \texttt{refs/heads/ftrace} $\to$ \texttt{commit ce5c1e\ldots}
+    \item \texttt{refs/tags/v2.6.8} $\to$ \texttt{commit e8ce2f\ldots}
+    \item \texttt{refs/tags/v2.6.27} $\to$ \texttt{tag 4b5127\ldots}
+    \end{itemize}
+  \item The repository automatically stores the directed acyclic graph
+    of objects rooted at these refs.
+  \end{itemize}
 \end{frame}
 
 \end{document}
