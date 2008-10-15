@@ -102,4 +102,50 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Working copy}
+  \begin{itemize}
+  \item Every working copy has its own Git repository in the
+    \texttt{.git} subdirectory (with arbitrarily many branches and
+    tags).
+  \item The most important ref is \texttt{HEAD}, which refers to the
+    current branch.
+  \item The working copy also has an \emph{index}: a staging area for
+    changes on top of \texttt{HEAD} that will become part of the next
+    commit.
+  \item Changes made to the working copy outside of \texttt{.git} can
+    be \emph{added} to the index.
+  \item The index can be \emph{committed} to the current branch (where
+    it will then become the new \texttt{HEAD}).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Basic Git commands}
+
+  \begin{description}[\texttt{git show \textit{object}}]
+  \item[\texttt{git init}] Create a Git repository in the current
+    directory.  By default it will have one branch named
+    \texttt{master}.
+  \item[\texttt{git add \textit{file}}] Add or update
+    \texttt{\textit{file}} into the index.
+  \item[\texttt{git commit}] Make a commit out of the current index.
+  \item[\texttt{git log}] List the commits on the current branch.
+  \item[\texttt{git show \textit{object}}] Show an object (e.g. a commit).
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{git diff}}
+
+  \begin{description}[\texttt{git diff --cached}]
+  \item[\texttt{git diff}] Show the differences between the index and
+    the working copy.
+  \item[\texttt{git diff --cached}] Show the differences between
+    \texttt{HEAD} and the index.
+  \item[\texttt{git diff \textit{commit}}] Show the differences
+    between \textit{commit} and the working copy.
+  \end{description}
+\end{frame}
+
 \end{document}
