@@ -3,13 +3,13 @@
 \mode<presentation>
 { \usetheme{Copenhagen} }
 
-\AtBeginSection[]
-{
-   \begin{frame}
-       \frametitle{Outline}
-       \tableofcontents[currentsection]
-   \end{frame}
-}
+% \AtBeginSection[]
+% {
+%    \begin{frame}
+%        \frametitle{Outline}
+%        \tableofcontents[currentsection]
+%    \end{frame}
+% }
 
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -103,6 +103,13 @@
   \item The repository automatically stores the directed acyclic graph
     of objects rooted at these refs.
   \end{itemize}
+\end{frame}
+
+\section{Using Git}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
 \end{frame}
 
 \begin{frame}
@@ -319,6 +326,37 @@ Created commit fc8da7a: Merge branch 'andersk'
 \hspace*{-1.2cm}\vskip 4.8cm
 }
 \only<25>{\vbox to 0pt{\vss\hspace*{-0.5cm}\includegraphics[width=12cm]{meld}\vskip 2cm}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Merging}
+  \begin{description}[\texttt{git merge \textit{branch}}]
+  \item[\texttt{git merge \textit{branch}}] Merge
+    \texttt{\textit{branch}} into \texttt{HEAD}. The index must not
+    contain any staged changes.
+  \end{description}
+
+  \begin{itemize}
+  \item A \emph{merge commit} is a commit with more than one parent.
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=4cm]{merge}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rebasing}
+  \begin{description}[\texttt{git rebase \textit{branch}}]
+  \item[\texttt{git rebase \textit{branch}}] Rebase \texttt{HEAD} onto
+    \texttt{\textit{branch}}.
+  \end{description}
+
+  \begin{center}
+    \only<1>{\includegraphics[width=4cm]{rebase1}}
+    \only<2>{\includegraphics[width=4cm]{rebase2}}
+    \only<3>{\includegraphics[width=4cm]{rebase3}}
+  \end{center}
 \end{frame}
 
 \end{document}
