@@ -204,8 +204,25 @@
   \end{description}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Merging}
+  \begin{description}[\texttt{git merge \textit{branch}}]
+  \item[\texttt{git merge \textit{branch}}] Merge
+    \texttt{\textit{branch}} into \texttt{HEAD}. The index must not
+    contain any staged changes.
+  \end{description}
+
+  \begin{itemize}
+  \item A \emph{merge commit} is a commit with more than one parent.
+  \end{itemize}
+
+  \begin{center}
+    \includegraphics[width=4cm]{merge}
+  \end{center}
+\end{frame}
+
 \begin{frame}[fragile]
-  \frametitle{Example}
+  \frametitle{Merging example}
 
   \vbox to 8.8cm{\vss
     \begin{semiverbatim}
@@ -326,23 +343,6 @@ Created commit fc8da7a: Merge branch 'andersk'
 \hspace*{-1.2cm}\vskip 4.8cm
 }
 \only<25>{\vbox to 0pt{\vss\hspace*{-0.5cm}\includegraphics[width=12cm]{meld}\vskip 2cm}}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Merging}
-  \begin{description}[\texttt{git merge \textit{branch}}]
-  \item[\texttt{git merge \textit{branch}}] Merge
-    \texttt{\textit{branch}} into \texttt{HEAD}. The index must not
-    contain any staged changes.
-  \end{description}
-
-  \begin{itemize}
-  \item A \emph{merge commit} is a commit with more than one parent.
-  \end{itemize}
-
-  \begin{center}
-    \includegraphics[width=4cm]{merge}
-  \end{center}
 \end{frame}
 
 \begin{frame}
