@@ -1,0 +1,70 @@
+anders@balanced-tree:/tmp/foo$ git init
+Initialized empty Git repository in /tmp/foo/.git/
+anders@balanced-tree:/tmp/foo$ echo 'hello' > file
+anders@balanced-tree:/tmp/foo$ git add file
+anders@balanced-tree:/tmp/foo$ git commit -m 'Initial commit.'
+Created initial commit 99137ab: Initial commit.
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 file
+anders@balanced-tree:/tmp/foo$ git checkout -b branch
+Switched to a new branch "branch"
+anders@balanced-tree:/tmp/foo$ echo 'world' >> file
+anders@balanced-tree:/tmp/foo$ git add file
+anders@balanced-tree:/tmp/foo$ git commit -m 'Add "world".'
+Created commit 83649e8: Add "world".
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+anders@balanced-tree:/tmp/foo$ git checkout master
+Switched to branch "master"
+anders@balanced-tree:/tmp/foo$ echo 'git' >> file
+anders@balanced-tree:/tmp/foo$ git add file
+anders@balanced-tree:/tmp/foo$ git commit -m 'Add "git".'
+Created commit 308abbb: Add "git".
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+anders@balanced-tree:/tmp/foo$ git merge branch
+Auto-merged file
+CONFLICT (content): Merge conflict in file
+Automatic merge failed; fix conflicts and then commit the result.
+anders@balanced-tree:/tmp/foo$ git status
+file: needs merge
+# On branch master
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#
+#	{\color{red}unmerged:   file}
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	{\color{red}file.orig}
+no changes added to commit (use "git add" and/or "git commit -a")
+anders@balanced-tree:/tmp/foo$ cat file
+hello
+<<<<<<< HEAD:file
+git
+=======
+world
+>>>>>>> branch:file
+anders@balanced-tree:/tmp/foo$ git mergetool
+Merging the files: file
+
+Normal merge conflict for 'file':
+  {local}: modified
+  {remote}: modified
+Hit return to start merge resolution tool (meld): 
+anders@balanced-tree:/tmp/foo$ cat file
+hello
+git world
+anders@balanced-tree:/tmp/foo$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	{\color{green}modified:   file}
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	{\color{red}file.orig}
+anders@balanced-tree:/tmp/foo$ git commit
+Created commit 498d489: Merge branch 'branch'
+
