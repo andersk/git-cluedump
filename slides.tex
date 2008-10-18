@@ -13,6 +13,7 @@
 
 \usepackage{graphicx}
 \usepackage{textcomp}
+\usepackage{tikz}
 
 \title{Git}
 \author{Nelson Elhage\and Anders Kaseorg}
@@ -224,8 +225,13 @@
 \begin{frame}[fragile]
   \frametitle{Merging example}
 
-  \vbox to 8.8cm{\vss
-    \begin{semiverbatim}
+  \hspace*{-0.5cm}
+  \begin{tikzpicture}
+    \useasboundingbox (0, 0) rectangle (11.5, 7);
+    \begin{scope}
+      \clip (0, 0) rectangle (11.5, 7);
+      \draw (0, -.8) node[anchor=south west,inner sep=0pt] {\vbox{
+\begin{semiverbatim}
 \only<1->{\sh{seq 5 > numbers}
 }\only<2->{\sh{git init}
 Initialized empty Git repository in /tmp/foo/.git/
@@ -326,23 +332,23 @@ Hit return to start merge resolution tool (meld):
 }\only<28->{\sh{git commit}
 Created commit fc8da7a: Merge branch 'andersk'
 }
-  \end{semiverbatim}
-}
-
-\vbox to 0pt{\vss\hfill\hspace*{-0.5cm}%
-\only<4>{\includegraphics[width=8cm]{merge1}}%
-\only<5-9>{\includegraphics[width=8cm]{merge2}}%
-\only<10>{\includegraphics[width=8cm]{merge3}}%
-\only<11-13>{\includegraphics[width=8cm]{merge4}}%
-\only<14>{\includegraphics[width=8cm]{merge5}}%
-\only<15-16>{\includegraphics[width=8cm]{merge6}}%
-\only<17-19>{\includegraphics[width=8cm]{merge7}}%
-\only<20>{\includegraphics[width=8cm]{merge8}}%
-\only<21-27>{\includegraphics[width=8cm]{merge9}}%
-\only<28>{\includegraphics[width=8cm]{merge10}}%
-\hspace*{-1.2cm}\vskip 4.8cm
-}
-\only<25>{\vbox to 0pt{\vss\hspace*{-0.5cm}\includegraphics[width=12cm]{meld}\vskip 2cm}}
+\end{semiverbatim}
+      }};
+    \end{scope}
+    \draw (12.5, 8.2) node[anchor=north east] {
+      \only<4>{\includegraphics[width=8cm]{merge1}}%
+      \only<5-9>{\includegraphics[width=8cm]{merge2}}%
+      \only<10>{\includegraphics[width=8cm]{merge3}}%
+      \only<11-13>{\includegraphics[width=8cm]{merge4}}%
+      \only<14>{\includegraphics[width=8cm]{merge5}}%
+      \only<15-16>{\includegraphics[width=8cm]{merge6}}%
+      \only<17-19>{\includegraphics[width=8cm]{merge7}}%
+      \only<20>{\includegraphics[width=8cm]{merge8}}%
+      \only<21-27>{\includegraphics[width=8cm]{merge9}}%
+      \only<28>{\includegraphics[width=8cm]{merge10}}%
+    };
+    \only<25>{\draw (current bounding box.center) node {\includegraphics[width=11.5cm]{meld}};}
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
