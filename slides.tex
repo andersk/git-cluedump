@@ -230,7 +230,7 @@
     \useasboundingbox (0, 0) rectangle (11.5, 7);
     \begin{scope}
       \clip (0, 0) rectangle (11.5, 7);
-      \draw (0, -.8) node[anchor=south west,inner sep=0pt] {\vbox{
+      \draw (0, 0) node[anchor=south west,inner sep=0pt] {\vbox{\footnotesize
 \begin{semiverbatim}
 \only<1->{\sh{seq 5 > numbers}
 }\only<2->{\sh{git init}
@@ -333,7 +333,7 @@ Hit return to start merge resolution tool (meld):
 Created commit fc8da7a: Merge branch 'andersk'
 }
 \end{semiverbatim}
-      }};
+      \vspace{-2em}}};
     \end{scope}
     \draw (12.5, 8.2) node[anchor=north east] {
       \only<4>{\includegraphics[width=8cm]{merge1}}%
