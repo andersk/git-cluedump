@@ -603,6 +603,25 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \end{frame}
 
 \begin{frame}
+  \frametitle{Why rewriting is useful}
+
+  \begin{itemize}
+  \item A good history will include one commit for each self-contained
+    logical change to the tree.
+  \item Avoid cluttering the history with typos and trivial bugs that
+    are fixed in the following commits.
+    \begin{itemize}
+    \item This makes things more pleasant for anyone who wants to read
+      or review your changes.
+    \item It also makes it easier to pinpoint bugs with \texttt{git
+        bisect}.
+    \end{itemize}
+  \item You don't need to worry about making your commits perfect as
+    you write them, since you can rearrange them later.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Resetting branches}
 
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
