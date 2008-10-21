@@ -256,11 +256,11 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Referring to commits}
+  \frametitle{Referring to objects}
 
   \begin{description}[\texttt{\textit{commit}\^{}2}]
   \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}\hfill] You
-    can always refer to a commit by its full SHA-1 ID, but this gets
+    can always refer to an object by its full SHA-1 ID, but this gets
     unwieldy very quickly.
   \item[\texttt{fc8da7}\hfill] You can use a truncated SHA-1 as long
     as it is unambiguous.
@@ -273,6 +273,8 @@
   \item[\texttt{\textit{commit}\~{}4}\hfill] Short for
     \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
     great-great-grandparent of a commit.
+  \item[\texttt{\textit{commit}:\textit{filename}}] The given file or
+    directory inside \texttt{\textit{commit}}'s tree.
   \end{description}
   \dots and more (see \texttt{git help rev-parse} for a full
   description of the syntax).
