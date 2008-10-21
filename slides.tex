@@ -211,9 +211,9 @@
     from the index.
   \item[\texttt{git rm \textit{file}}\hfill] Delete
     \texttt{\textit{file}} from the index and the working tree.
-  \item[\texttt{git mv \textit{oldfile} \textit{newfile}}] Shortcut
-    for \texttt{mv \textit{oldfile} \textit{newfile}} plus the
-    appropriate additions and removals in the index.
+  \item[\texttt{git mv \textit{oldfile} \textit{newfile}}\hfill]
+    Shortcut for \texttt{mv \textit{oldfile} \textit{newfile}} plus
+    the appropriate additions and removals in the index.
   \item[\texttt{git status}\hfill] Display the files changed in the
     index and in the working tree.
   \item[\texttt{git commit}\hfill] Make a commit out of the current
@@ -283,8 +283,8 @@
   \item[\texttt{\textit{commit}\~{}4}\hfill] Short for
     \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
     great-great-grandparent of a commit.
-  \item[\texttt{\textit{commit}:\textit{filename}}] The given file or
-    directory inside \texttt{\textit{commit}}'s tree.
+  \item[\texttt{\textit{commit}:\textit{filename}}\hfill] The given
+    file or directory inside \texttt{\textit{commit}}'s tree.
   \end{description}
   \dots and more (see \texttt{git help rev-parse} for a full
   description of the syntax).
@@ -535,12 +535,12 @@ Created commit fc8da7a: Merge branch 'andersk'
 \begin{frame}
   \frametitle{Cherry-picking and reverting}
   \begin{description}[\texttt{git cherry-pick \textit{commit}}]
-  \item[\texttt{git cherry-pick \textit{commit}}] Constructs a new
-    commit on \texttt{HEAD} that performs the same changes as
+  \item[\texttt{git cherry-pick \textit{commit}}\hfill] Constructs a
+    new commit on \texttt{HEAD} that performs the same changes as
     \texttt{\textit{commit}}.
-  \item[\texttt{git revert \textit{commit}}] Constructs a new commit
-    on \texttt{HEAD} that performs the reverse of the changes in
-    \texttt{\textit{commit}}.
+  \item[\texttt{git revert \textit{commit}}\hfill] Constructs a new
+    commit on \texttt{HEAD} that performs the reverse of the changes
+    in \texttt{\textit{commit}}.
   \end{description}
 
   \begin{itemize}
