@@ -419,7 +419,7 @@ Created commit fc8da7a: Merge branch 'andersk'
 \begin{frame}
   \frametitle{Getting Out of Trouble}
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
-  \item[\texttt{git log -g \textit{ref}}] Show the \emph{reflog}
+  \item[\texttt{git reflog show \textit{ref}}] Show the \emph{reflog}
     entries for \texttt{\textit{ref}}.
   \item[\texttt{git reset --hard \textit{commit}}] Resets the
     \emph{ref} pointed to by \texttt{HEAD}, as well as the index and
@@ -427,16 +427,31 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{description}
 
   \begin{itemize}
-  \item The reflog tracks changes to what refs point to. Whenever a
-    ref is changed to point at something new, it gets an entry in the
-    reflog.
+  \item The reflog tracks changes refs. Whenever a ref is updated to
+    point at a new commit, it gets an entry in the reflog.
   \item If you find yourself somewhere you don't expect, you can
-    examine the reflog, and then use reset to get back to a known
-    point.
+    examine the reflog, and then use \texttt{reset} to get back to a
+    known point.
   \item This works even in a conflicted merge or rebase, if you just
     want to bail out and try something different.
   \end{itemize}
 
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{A peek at the reflog}
+  {\footnotesize
+  \begin{semiverbatim}
+\sh{git reflog show master}
+fc8da7a... master@{0}: commit (merge): Merge branch 'andersk'
+994be80... master@{1}: merge andersk: Merge made by recursive.
+383c158... master@{2}: commit: 6 is a number too.
+4172330... master@{3}: commit (initial): 1, 2, 3, 4, 5!
+\sh{git reflog show andersk}
+5360c2d... andersk@{0}: commit: 5½ is a better number.
+7aeb494... andersk@{1}: commit: Numbers start at 0.
+4172330... andersk@{2}: branch: Created from HEAD
+  \end{semiverbatim}}
 \end{frame}
 
 \section{Collaboration with Git}
