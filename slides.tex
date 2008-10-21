@@ -232,6 +232,29 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Referring to commits}
+
+  \begin{description}[\texttt{\textit{commit}\^{}2}]
+  \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}] You
+    can always refer to a commit by its full SHA-1 ID, but this gets
+    unwieldy very quickly.
+  \item[\texttt{fc8da7}] You can use a truncated SHA-1 as long as it
+    is unambiguous.
+  \item[\texttt{\textit{refname}}] You can refer to a branch or tag by
+    name.
+  \item[\texttt{\textit{commit}\^{}}] Append a \texttt{\^{}} to get
+    the (first) parent of a commit.
+  \item[\texttt{\textit{commit}\^{}2}] The second parent of a commit,
+    etc.
+  \item[\texttt{\textit{commit}\~{}4}] Short for
+    \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
+    great-great-grandparent of a commit.
+  \end{description}
+  \dots and more (see \texttt{git help rev-parse} for a full
+  description of the syntax).
+\end{frame}
+
+\begin{frame}
   \frametitle{Merging}
   \begin{description}[\texttt{git merge \textit{commit}}]
   \item[\texttt{git merge \textit{commit}}] Merge
