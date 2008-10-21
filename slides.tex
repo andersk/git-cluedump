@@ -207,19 +207,23 @@
 
 \begin{frame}
   \frametitle{Merging}
-  \begin{description}[\texttt{git merge \textit{branch}}]
-  \item[\texttt{git merge \textit{branch}}] Merge
-    \texttt{\textit{branch}} into \texttt{HEAD}. The index must not
+  \begin{description}[\texttt{git merge \textit{commit}}]
+  \item[\texttt{git merge \textit{commit}}] Merge
+    \texttt{\textit{commit}} into \texttt{HEAD}. The index must not
     contain any staged changes.
   \end{description}
 
   \begin{itemize}
-  \item A \emph{merge commit} is a commit with more than one parent.
+  \item In the general case, this will result in a \emph{merge
+      commit}---a commit with more than one parent.
+    \begin{center}
+      \includegraphics[width=4cm]{merge}
+    \end{center}
+  \item If \texttt{\textit{commit}} is an ancestor of \texttt{HEAD},
+    then the merge is a no-op.
+  \item If \texttt{\textit{commit}} is a descendent of \texttt{HEAD},
+    then the merge degenerates into a \emph{fast-forward}.
   \end{itemize}
-
-  \begin{center}
-    \includegraphics[width=4cm]{merge}
-  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]
