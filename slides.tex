@@ -238,14 +238,16 @@
 \begin{frame}
   \frametitle{Manipulating branches}
 
-  \begin{description}[\texttt{git checkout -b \textit{branch}}]
+  \begin{description}[\texttt{git branch -d \textit{branch}}]
   \item[\texttt{git branch}] List the branches in your repository,
     with the current branch highlighted.
   \item[\texttt{git checkout \textit{branch}}] Switch to the branch
     named \texttt{\textit{branch}}.  This updates \texttt{HEAD}, the
     index, and the working tree.
-  \item[\texttt{git checkout -b \textit{branch}}] Create a new branch
-    named \texttt{\textit{branch}} and switch to it.
+  \item[\texttt{git checkout -b \textit{branch} [\textit{commit}]}]
+    Create a new branch named \texttt{\textit{branch}} starting at
+    \texttt{\textit{commit}} (defaulting to current \texttt{HEAD}),
+    and switch to it.
   \item[\texttt{git branch -d \textit{branch}}] Delete the branch
     \texttt{\textit{branch}}.
   \item[\texttt{git branch -m \textit{oldbranch} \textit{newbranch}}]
