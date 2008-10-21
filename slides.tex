@@ -460,6 +460,44 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{The simple case}
+
+  \begin{itemize}
+  \item A freshly cloned repository has one remote called
+    \texttt{origin}, which is the default source for pulls and
+    destination for pushes.
+  \end{itemize}
+
+  \begin{description}[\texttt{git branch -r}]
+  \item[\texttt{git fetch}] Download commits from \texttt{origin}.
+    Each remote branch \texttt{\textit{branch}} will be made available
+    with the name \texttt{origin/\textit{branch}}.
+  \item[\texttt{git branch -r}] List the available remote branches.
+  \item[\texttt{git branch -a}] List the available local and remote branches.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Tracking branches}
+
+  \begin{description}[git pull --rebase]
+  \item[\texttt{git checkout -b \textit{branch}
+      origin/\textit{branch}}] Create and switch to a new tracking
+    branch named \texttt{\textit{branch}}, set up to track the remote
+    branch \texttt{origin/\textit{branch}}.
+  \item[\texttt{git pull}] Update the current tracking branch from
+    \texttt{origin/\textit{branch}}.  Short for \texttt{git fetch; git
+      merge origin/\textit{branch}}.
+  \item[\texttt{git pull --rebase}] Short for \texttt{git fetch; git
+      rebase origin/\textit{branch}}.
+  \item[\texttt{git push}] Push the current tracking branch back to
+    \texttt{origin/\textit{branch}}.  This will only fast-forward the
+    remote branch by default, so you may need to \texttt{git pull}
+    first.
+  \end{description}
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Remotes}
   \begin{itemize}
@@ -482,23 +520,6 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 	merge = refs/heads/master
 \end{semiverbatim}
   \end{footnotesize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Fetching}
-  \begin{description}[\texttt{git pull --rebase}]
-  \item[\texttt{git fetch}] Pull commits from the default remote
-    repository.
-  \item[\texttt{git branch -r}] List the remote branches.
-  \item[\texttt{git checkout -b \textit{branch}
-      \textit{remote}/\textit{branch}}] Create a tracking branch
-    \texttt{\textit{branch}} set up to track the remote branch
-    \texttt{\textit{remote}/\textit{branch}}.
-  \item[\texttt{git pull}] Short for \texttt{git fetch; git merge
-      \textit{remote}}.
-  \item[\texttt{git pull --rebase}] Short for \texttt{git fetch; git
-      rebase \textit{remote}}
-  \end{description}
 \end{frame}
 
 \end{document}
