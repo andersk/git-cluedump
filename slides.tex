@@ -579,6 +579,32 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \end{footnotesize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Hosting a public Git repository}
+
+  \begin{itemize}
+  \item A repository that's used for cloning, pulling, and pushing
+    should usually be a \emph{bare repository} (\texttt{git clone
+      --bare}).  A bare repository has no working tree, and lives in a
+    directory named \texttt{\textit{project}.git} instead of
+    \texttt{\textit{project}/.git}.
+  \item The quickest solution at MIT is to drop your repository into
+    AFS.
+  \item To serve a repository on the web, you need to run \texttt{git
+      update-server-info}, and enable the \texttt{hooks/post-update}
+    hook.
+  \item To serve a repository via the Git protocol, you need to create
+    the \texttt{git-daemon-export-ok} file inside it.
+    \begin{itemize}
+    \item \texttt{scripts.mit.edu} provides a Git hosting service.
+      Drop your repository into
+      \texttt{/mit/\textit{locker}/Scripts/git/\textit{project}.git}
+      and access it at
+      \texttt{git://\textit{locker}.scripts.mit.edu/\textit{project}.git}.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \section{Rewriting history}
 
 \begin{frame}
