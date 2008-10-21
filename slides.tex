@@ -532,6 +532,26 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \end{frame}
 
 \begin{frame}
+  \frametitle{Resetting branches}
+
+  \begin{description}[\texttt{git reset --hard \textit{commit}}]
+  \item[\texttt{git reset --hard \textit{commit}}] Resets the current
+    \texttt{HEAD}, as well as the index and working tree, to
+    \texttt{\textit{commit}}.
+  \item[\texttt{git reset \textit{commit}}] Resets the current
+    \texttt{HEAD} and index to \textit{commit}, without touching the
+    working tree.
+  \item[\texttt{git reset --soft \textit{commit}}] Resets the current
+    \texttt{HEAD} to \textit{commit}, without touching the index or
+    the working tree.
+  \item[\texttt{git commit --amend}] Adds the modifications in the
+    index to the current commit at \texttt{HEAD} ``in place''.
+    Approximately equivalent to \texttt{git reset
+      HEAD\textasciicircum; git commit}.
+  \end{description}
+\end{frame}
+
+\begin{frame}
   \frametitle{Rebasing}
   \begin{description}[\texttt{git rebase \textit{commit}}]
   \item[\texttt{git rebase \textit{commit}}] Rebase \texttt{HEAD} onto
