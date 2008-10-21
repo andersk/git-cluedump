@@ -387,14 +387,37 @@ Created commit fc8da7a: Merge branch 'andersk'
     \texttt{\textit{commit}}.
   \end{description}
 
-  \begin{center}
-    \only<1>{\includegraphics[width=4cm]{rebase1}}
-    \only<2>{\includegraphics[width=4cm]{rebase2}}
-    \only<3>{\includegraphics[width=4cm]{rebase3}}
+  \begin{itemize}
+  \item \texttt{rebase} finds all commits that are in \texttt{HEAD}
+    but not in \texttt{\textit{commit}}, and re-applies them starting
+    with \texttt{\textit{commit}}. The current branch is reset to the
+    result.
+  \item This has a similar effect to a merge, but maintains a linear
+    history, at the cost of losing some information.
+  \item \texttt{rebase} \emph{changes the object identifiers} of the
+    re-applied commits.
+  \item \texttt{rebase} is often preferred to keep history clean.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rebase v. Merge}
+  \begin{itemize}
+  \only<1>{\item We have development on both a \emph{topic branch} and
+    \texttt{master}.}
+  \only<2>{\item \texttt{merge} results in a forked history:}
+  \only<3>{\item \texttt{rebase} rewrites commits and maintains a
+    linear history:}
+  \end{itemize}
+    \begin{center}
+    \only<1>{\includegraphics[width=5cm]{rebase1}}
+    \only<2>{\includegraphics[width=5cm]{rebase2}}
+    \only<3>{\includegraphics[width=5cm]{rebase3}}
   \end{center}
 \end{frame}
 
 \begin{frame}
+  \frametitle{Getting Out of Trouble}
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
   \item[\texttt{git log -g \textit{ref}}] Show the \emph{reflog}
     entries for \texttt{\textit{ref}}.
