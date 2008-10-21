@@ -394,4 +394,28 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{center}
 \end{frame}
 
+\section{Finding Your Way Put of Trouble}
+
+\begin{frame}
+  \begin{description}[\texttt{git reset --hard \textit{commit}}]
+  \item[\texttt{git log -g \textit{ref}}] Show the \emph{reflog}
+    entries for \texttt{\textit{ref}}.
+  \item[\texttt{git reset --hard \textit{commit}}] Resets the
+    \emph{ref} pointed to by \texttt{HEAD}, as well as the index and
+    working tree, to \texttt{\textit{commit}}.
+  \end{description}
+
+  \begin{itemize}
+  \item The reflog tracks changes to what refs point to. Whenever a
+    ref is changed to point at something new, it gets an entry in the
+    reflog.
+  \item If you find yourself somewhere you don't expect, you can
+    examine the reflog, and then use reset to get back to a known
+    point.
+  \item This works even in a conflicted merge or rebase, if you just
+    want to bail out and try something different.
+  \end{itemize}
+
+\end{frame}
+
 \end{document}
