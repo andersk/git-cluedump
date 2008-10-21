@@ -702,4 +702,43 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{And beyond!}
+
+  \begin{description}[\texttt{git filter-branch}]
+  \item[\texttt{git bisect}] Easily pinpoint a regression in your
+    history using a repeated bisection search.
+  \item[\texttt{git cvsimport}, \texttt{git svn}] Use Git to work with
+    repositories in other formats.  (I think Git makes a much better
+    CVS or SVN client than the native ones!)
+  \item[\texttt{git filter-branch}] Rewrite history by mapping each
+    commit through an arbitrary script.
+  \item[\texttt{git format-patch}, \texttt{git send-email}, \text{git
+      am}] Send and receive Git patches by email.
+  \item[\texttt{git stash}] Quickly stash away and reapply temporary
+    changes while you do other work.
+  \item[\texttt{gitk}] A graphical repository browser that's great for
+    visualizing how your actions affect the state of your repository.
+  \end{description}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exploring Git yourself}
+
+  \begin{itemize}
+  \item There are many commands we haven't talked about, and the ones
+    we have take additional options that can help you work more
+    efficiently.
+  \item Anything you think you should be able to do within the Git
+    model can probably be done.
+  \item Git is designed to be conveniently scriptable.
+  \item Git has extensive documentation---start with \texttt{man git}.
+    \begin{itemize}
+    \item To get documentation on any \texttt{git \textit{command}},
+      run \texttt{git help \textit{command}} or (equivalently)
+      \texttt{man git-\textit{command}}.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \end{document}
