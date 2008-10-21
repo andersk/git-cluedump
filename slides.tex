@@ -681,4 +681,25 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Interactive rebasing}
+  \begin{description}[\texttt{git rebase -i \textit{commit}}]
+  \item[\texttt{git rebase -i \textit{commit}}] Rebase \texttt{HEAD}
+    onto \texttt{\textit{commit}}, letting you interactively edit the
+    resulting history.
+  \end{description}
+
+  \begin{itemize}
+  \item Git will start your editor on a list of the commits to be
+    applied on top of \textit{commit}.
+  \item You can cut and paste to arbitrarily reorder the commits.
+  \item You can delete a line to remove that commit completely.
+  \item You can insert the \texttt{squash} directive to fuse a commit
+    into the previous commit.
+  \item You can insert the \texttt{edit} directive to have Git pause
+    after applying a commit, so you can amend it in place or insert
+    new commits, before further commits are applied.
+  \end{itemize}
+\end{frame}
+
 \end{document}
