@@ -109,6 +109,21 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Branches}
+
+  \begin{itemize}
+  \item Git was designed to enable lightweight branching and merging.
+  \item Each repository can have any number of branches.
+  \item Branches are just refs---pointers into the DAG of
+    commits---and these pointers themselves are not versioned.
+    \begin{itemize}
+    \item So you don't need to be afraid of making throwaway branches
+      for experiments.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Consequences of the Git model}
 
   \begin{itemize}
@@ -231,6 +246,10 @@
     index, and the working tree.
   \item[\texttt{git checkout -b \textit{branch}}] Create a new branch
     named \texttt{\textit{branch}} and switch to it.
+  \item[\texttt{git branch -d \textit{branch}}] Delete the branch
+    \texttt{\textit{branch}}.
+  \item[\texttt{git branch -m \textit{oldbranch} \textit{newbranch}}]
+    Rename \texttt{\textit{oldbranch}} to \texttt{\textit{newbranch}}.
   \end{description}
 \end{frame}
 
