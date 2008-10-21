@@ -223,6 +223,31 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Referring to objects}
+
+  \begin{description}[\texttt{\textit{commit}\^{}2}]
+  \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}\hfill] You
+    can always refer to an object by its full SHA-1 ID, but this gets
+    unwieldy very quickly.
+  \item[\texttt{fc8da7}\hfill] You can use a truncated SHA-1 as long
+    as it is unambiguous.
+  \item[\texttt{\textit{refname}}\hfill] You can refer to a branch or
+    tag by name.
+  \item[\texttt{\textit{commit}\^{}}\hfill] Append a \texttt{\^{}} to
+    get the (first) parent of a commit.
+  \item[\texttt{\textit{commit}\^{}2}\hfill] The second parent of a
+    commit, etc.
+  \item[\texttt{\textit{commit}\~{}4}\hfill] Short for
+    \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
+    great-great-grandparent of a commit.
+  \item[\texttt{\textit{commit}:\textit{filename}}\hfill] The given
+    file or directory inside \texttt{\textit{commit}}'s tree.
+  \end{description}
+  \dots and more (see \texttt{git help rev-parse} for a full
+  description of the syntax).
+\end{frame}
+
+\begin{frame}
   \frametitle{Displaying changes}
 
   \begin{description}[\texttt{git diff --cached}]
@@ -263,31 +288,6 @@
   \item[\texttt{git tag -d \textit{tag}}\hfill] Delete the tag named
     \texttt{\textit{tag}}.
   \end{description}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Referring to objects}
-
-  \begin{description}[\texttt{\textit{commit}\^{}2}]
-  \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}\hfill] You
-    can always refer to an object by its full SHA-1 ID, but this gets
-    unwieldy very quickly.
-  \item[\texttt{fc8da7}\hfill] You can use a truncated SHA-1 as long
-    as it is unambiguous.
-  \item[\texttt{\textit{refname}}\hfill] You can refer to a branch or
-    tag by name.
-  \item[\texttt{\textit{commit}\^{}}\hfill] Append a \texttt{\^{}} to
-    get the (first) parent of a commit.
-  \item[\texttt{\textit{commit}\^{}2}\hfill] The second parent of a
-    commit, etc.
-  \item[\texttt{\textit{commit}\~{}4}\hfill] Short for
-    \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
-    great-great-grandparent of a commit.
-  \item[\texttt{\textit{commit}:\textit{filename}}\hfill] The given
-    file or directory inside \texttt{\textit{commit}}'s tree.
-  \end{description}
-  \dots and more (see \texttt{git help rev-parse} for a full
-  description of the syntax).
 \end{frame}
 
 \begin{frame}[fragile]
