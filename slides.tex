@@ -522,6 +522,28 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{semiverbatim}}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Cherry-picking and reverting}
+  \begin{description}[\texttt{git cherry-pick \textit{commit}}]
+  \item[\texttt{git cherry-pick \textit{commit}}] Constructs a new
+    commit on \texttt{HEAD} that performs the same changes as
+    \texttt{\textit{commit}}.
+  \item[\texttt{git revert \textit{commit}}] Constructs a new commit
+    on \texttt{HEAD} that performs the reverse of the changes in
+    \texttt{\textit{commit}}.
+  \end{description}
+
+  \begin{itemize}
+  \item These commands construct a new commit that does not preserve
+    any parent information pointing back to the old one.  Use with
+    care.
+  \item Instead of cherry-picking from your development branch into
+    your stable branch, for example, it is usually better to make the
+    commit on stable and merge the entire stable branch into
+    development.
+  \end{itemize}
+\end{frame}
+
 \section{Collaboration with Git}
 
 \begin{frame}
