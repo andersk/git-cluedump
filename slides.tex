@@ -258,10 +258,11 @@
   \item[\texttt{git branch -m \textit{oldbranch}
       \textit{newbranch}}\hfill] Rename \texttt{\textit{oldbranch}} to
     \texttt{\textit{newbranch}}.
-  \item[\texttt{git tag \textit{tag}}\hfill] Attach a new tag named
-    \textit{tag} to the commit at \texttt{HEAD}.
+  \item[\texttt{git tag \textit{tag} [\textit{commit}]}\hfill] Attach
+    a new tag named \texttt{\textit{tag}} to \texttt{\textit{commit}}
+    (defaulting to current \texttt{HEAD}).
   \item[\texttt{git tag -d \textit{tag}}\hfill] Delete the tag named
-    \textit{tag}.
+    \texttt{\textit{tag}}.
   \end{description}
 \end{frame}
 
