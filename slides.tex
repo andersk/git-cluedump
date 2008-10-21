@@ -604,7 +604,7 @@ Created commit fc8da7a: Merge branch 'andersk'
 \begin{frame}
   \frametitle{Tracking branches}
 
-  \begin{description}[git pull --rebase]
+  \begin{description}[\texttt{git push origin :\textit{branch}}]
   \item[\texttt{git checkout -b \textit{branch}
       origin/\textit{branch}}] Create and switch to a new tracking
     branch named \texttt{\textit{branch}}, set up to track the remote
@@ -612,8 +612,6 @@ Created commit fc8da7a: Merge branch 'andersk'
   \item[\texttt{git pull}\hfill] Update the current tracking branch
     from \texttt{origin/\textit{branch}}.  Short for \texttt{git
       fetch; git merge origin/\textit{branch}}.
-  \item[\texttt{git pull --rebase}\hfill] Short for \texttt{git fetch;
-      git rebase origin/\textit{branch}}.
   \item[\texttt{git push}\hfill] Push the current tracking branch back
     to \texttt{origin/\textit{branch}}.  This will only fast-forward
     the remote branch by default, so you may need to \texttt{git pull}
@@ -741,6 +739,8 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \begin{description}[\texttt{git rebase \textit{commit}}]
   \item[\texttt{git rebase \textit{commit}}\hfill] Rebase
     \texttt{HEAD} onto \texttt{\textit{commit}}.
+  \item[\texttt{git pull --rebase}\hfill] Short for \texttt{git fetch;
+      git rebase origin/\textit{branch}}.
   \end{description}
 
   \begin{itemize}
