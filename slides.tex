@@ -2,7 +2,6 @@
 
 \mode<presentation>
 { \usetheme{CambridgeUS} }
-\setbeamersize{text margin left=0.75cm}
 
 \AtBeginSection[]
 {
@@ -80,12 +79,12 @@
 
 \begin{frame}
   \frametitle{A commit}
-  \hspace*{-0.5cm}\includegraphics[width=12cm]{commit}
+  \includegraphics[width=12cm]{commit}
 \end{frame}
 
 \begin{frame}
   \frametitle{More commits}
-  \hspace*{-0.5cm}\includegraphics[width=12cm]{prctl}
+  \includegraphics[width=12cm]{prctl}
 \end{frame}
 
 \begin{frame}
@@ -353,11 +352,10 @@
 \begin{frame}[fragile]
   \frametitle{Merging example}
 
-  \hspace*{-0.5cm}
   \begin{tikzpicture}
-    \useasboundingbox (0, 0) rectangle (11.5, 7);
+    \useasboundingbox (0, 0) rectangle (12, 7);
     \begin{scope}
-      \clip (0, 0) rectangle (11.5, 7);
+      \clip (0, 0) rectangle (12, 7);
       \draw (0, 0) node[anchor=south west,inner sep=0pt] {\vbox{\footnotesize
 \begin{semiverbatim}
 \only<1->{\sh{seq 5 > numbers}
