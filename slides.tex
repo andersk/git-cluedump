@@ -106,6 +106,31 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Consequences of the Git model}
+
+  \begin{itemize}
+  \item Git tracks the history of your whole project, not the history
+    of individual files.
+    \begin{itemize}
+    \item Best practice is to keep projects that are logically
+      separate in separate Git repositories.
+    \end{itemize}
+  \item Git does not track renames as metadata in the repository.
+    \begin{itemize}
+    \item Instead, renames are automatically detected based on content
+      when this information is needed.
+    \end{itemize}
+  \item A commit ID cryptographically certifies the integrity of the
+    \emph{entire history} of the repository up to that commit.
+    \begin{itemize}
+    \item Git has powerful tools for rewriting history---but this
+      requires communication with everyone that has pulled any
+      affected commits from your repository.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \section{Using Git}
 
 \begin{frame}
