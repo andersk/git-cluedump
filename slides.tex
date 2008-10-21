@@ -200,12 +200,15 @@
 
 \begin{frame}
   \frametitle{Constructing commits}
-  \begin{description}[\texttt{git show \textit{object}}]
+  \begin{description}[\texttt{git checkout \textit{file}}]
   \item[\texttt{git add \textit{file}}\hfill] Add or update
     \texttt{\textit{file}} from the working tree into the index.
   \item[\texttt{git reset \textit{file}}\hfill] Unstage changes to
     \texttt{\textit{file}} in the index, without touching the working
-    copy.
+    tree.
+  \item[\texttt{git checkout \textit{file}}\hfill] Undo modifications
+    to \texttt{\textit{file}} in the working tree by reading it back
+    from the index.
   \item[\texttt{git rm \textit{file}}\hfill] Delete
     \texttt{\textit{file}} from the index and the working tree.
   \item[\texttt{git mv \textit{oldfile} \textit{newfile}}] Shortcut
