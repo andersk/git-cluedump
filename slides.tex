@@ -698,16 +698,34 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \end{frame}
 
 \begin{frame}
-  \frametitle{And beyond!}
+  \frametitle{Advanced rewriting}
 
   \begin{description}[\texttt{git filter-branch}]
+  \item[\texttt{git filter-branch}] Rewrite history by mapping each
+    commit through an arbitrary script.
+  \item[\texttt{.git/info/grafts}] Causes the local repository to
+    pretend that certain commits have different parents than their
+    real ones.  (\texttt{git filter-branch} can then rewrite the fake
+    parents into real ones.)
+  \item[\texttt{git fast-export}] Dump history in a human-readable
+    format, with SHA-1 IDs replaced by symbolic marks, so that it can
+    be edited by hand.
+  \item[\texttt{git fast-import}] Read back commits produced by
+    \texttt{git fast-export}.
+  \end{description}
+\end{frame}
+
+\section{And beyond!}
+
+\begin{frame}
+  \frametitle{Other awesome Git commands}
+
+  \begin{description}[\texttt{git format-patch}]
   \item[\texttt{git bisect}] Easily pinpoint a regression in your
     history using a repeated bisection search.
   \item[\texttt{git cvsimport}, \texttt{git svn}] Use Git to work with
     repositories in other formats.  (I think Git makes a much better
     CVS or SVN client than the native ones!)
-  \item[\texttt{git filter-branch}] Rewrite history by mapping each
-    commit through an arbitrary script.
   \item[\texttt{git format-patch}, \texttt{git send-email}, \text{git
       am}] Send and receive Git patches by email.
   \item[\texttt{git stash}] Quickly stash away and reapply temporary
