@@ -777,7 +777,9 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \begin{description}[\texttt{git rebase -i \textit{commit}}]
   \item[\texttt{git rebase -i \textit{commit}}\hfill] Rebase
     \texttt{HEAD} onto \texttt{\textit{commit}}, letting you
-    interactively edit the resulting history.
+    interactively edit the resulting history.  (Typically
+    \texttt{\textit{commit}} will already be an ancestor of
+    \texttt{HEAD}, to edit history ``in place''.)
   \end{description}
 
   \begin{itemize}
