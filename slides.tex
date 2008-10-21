@@ -154,12 +154,13 @@
   \frametitle{Getting a Git repository}
 
   \begin{description}[\texttt{git clone \textit{url}}]
-  \item[\texttt{git init}] Create an empty Git repository in the
+  \item[\texttt{git init}\hfill] Create an empty Git repository in the
     current directory.  By default it will have one branch named
     \texttt{master}.
-  \item[\texttt{git clone \textit{url}}] Clone the Git repository from
-    \texttt{\textit{url}}.  This may be over HTTP, SSH, or the Git
-    protocol, or it may be a path to another local repository.
+  \item[\texttt{git clone \textit{url}}\hfill] Clone the Git
+    repository from \texttt{\textit{url}}.  This may be over HTTP,
+    SSH, or the Git protocol, or it may be a path to another local
+    repository.
   \end{description}
 
   Both of these operations will create a \emph{working copy}.
@@ -200,18 +201,19 @@
 \begin{frame}
   \frametitle{Constructing commits}
   \begin{description}[\texttt{git show \textit{object}}]
-  \item[\texttt{git add \textit{file}}] Add or update
+  \item[\texttt{git add \textit{file}}\hfill] Add or update
     \texttt{\textit{file}} from the working tree into the index.
-  \item[\texttt{git reset \textit{file}}] Unstage changes to
+  \item[\texttt{git reset \textit{file}}\hfill] Unstage changes to
     \texttt{\textit{file}} in the index, without touching the working
     copy.
-  \item[\texttt{git rm \textit{file}}] Delete \texttt{\textit{file}}
-    from the index and the working tree.
-  \item[\texttt{git status}] Display the files changed in the index
-    and in the working tree.
-  \item[\texttt{git commit}] Make a commit out of the current index.
-  \item[\texttt{git commit -a}] Shortcut for adding all modified files
-    to the index and committing.
+  \item[\texttt{git rm \textit{file}}\hfill] Delete
+    \texttt{\textit{file}} from the index and the working tree.
+  \item[\texttt{git status}\hfill] Display the files changed in the
+    index and in the working tree.
+  \item[\texttt{git commit}\hfill] Make a commit out of the current
+    index.
+  \item[\texttt{git commit -a}\hfill] Shortcut for adding all modified
+    files to the index and committing.
   \end{description}
 \end{frame}
 
@@ -219,13 +221,15 @@
   \frametitle{Displaying changes}
 
   \begin{description}[\texttt{git diff --cached}]
-  \item[\texttt{git log}] List the commits on the current branch.
-  \item[\texttt{git show \textit{object}}] Show an object (e.g. a commit).
-  \item[\texttt{git diff}] Show the differences between the index and
-    the working tree.
-  \item[\texttt{git diff --cached}] Show the differences between
+  \item[\texttt{git log}\hfill] List the commits on the current
+    branch.
+  \item[\texttt{git show \textit{object}}\hfill] Show an object
+    (e.g. a commit).
+  \item[\texttt{git diff}\hfill] Show the differences between the
+    index and the working tree.
+  \item[\texttt{git diff --cached}\hfill] Show the differences between
     \texttt{HEAD} and the index.
-  \item[\texttt{git diff \textit{commit}}] Show the differences
+  \item[\texttt{git diff \textit{commit}}\hfill] Show the differences
     between \textit{commit} and the working tree.
   \end{description}
 \end{frame}
@@ -234,19 +238,20 @@
   \frametitle{Manipulating branches}
 
   \begin{description}[\texttt{git branch -d \textit{branch}}]
-  \item[\texttt{git branch}] List the branches in your repository,
-    with the current branch highlighted.
-  \item[\texttt{git checkout \textit{branch}}] Switch to the branch
-    named \texttt{\textit{branch}}.  This updates \texttt{HEAD}, the
-    index, and the working tree.
-  \item[\texttt{git checkout -b \textit{branch} [\textit{commit}]}]
-    Create a new branch named \texttt{\textit{branch}} starting at
-    \texttt{\textit{commit}} (defaulting to current \texttt{HEAD}),
-    and switch to it.
-  \item[\texttt{git branch -d \textit{branch}}] Delete the branch
-    \texttt{\textit{branch}}.
-  \item[\texttt{git branch -m \textit{oldbranch} \textit{newbranch}}]
-    Rename \texttt{\textit{oldbranch}} to \texttt{\textit{newbranch}}.
+  \item[\texttt{git branch}\hfill] List the branches in your
+    repository, with the current branch highlighted.
+  \item[\texttt{git checkout \textit{branch}}\hfill] Switch to the
+    branch named \texttt{\textit{branch}}.  This updates
+    \texttt{HEAD}, the index, and the working tree.
+  \item[\texttt{git checkout -b \textit{branch}
+      [\textit{commit}]}\hfill] Create a new branch named
+    \texttt{\textit{branch}} starting at \texttt{\textit{commit}}
+    (defaulting to current \texttt{HEAD}), and switch to it.
+  \item[\texttt{git branch -d \textit{branch}}\hfill] Delete the
+    branch \texttt{\textit{branch}}.
+  \item[\texttt{git branch -m \textit{oldbranch}
+      \textit{newbranch}}\hfill] Rename \texttt{\textit{oldbranch}} to
+    \texttt{\textit{newbranch}}.
   \end{description}
 \end{frame}
 
@@ -254,18 +259,18 @@
   \frametitle{Referring to commits}
 
   \begin{description}[\texttt{\textit{commit}\^{}2}]
-  \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}] You
+  \item[\texttt{fc8da7a06bb66b707e7f5406657d5a3b7ee42c66}\hfill] You
     can always refer to a commit by its full SHA-1 ID, but this gets
     unwieldy very quickly.
-  \item[\texttt{fc8da7}] You can use a truncated SHA-1 as long as it
-    is unambiguous.
-  \item[\texttt{\textit{refname}}] You can refer to a branch or tag by
-    name.
-  \item[\texttt{\textit{commit}\^{}}] Append a \texttt{\^{}} to get
-    the (first) parent of a commit.
-  \item[\texttt{\textit{commit}\^{}2}] The second parent of a commit,
-    etc.
-  \item[\texttt{\textit{commit}\~{}4}] Short for
+  \item[\texttt{fc8da7}\hfill] You can use a truncated SHA-1 as long
+    as it is unambiguous.
+  \item[\texttt{\textit{refname}}\hfill] You can refer to a branch or
+    tag by name.
+  \item[\texttt{\textit{commit}\^{}}\hfill] Append a \texttt{\^{}} to
+    get the (first) parent of a commit.
+  \item[\texttt{\textit{commit}\^{}2}\hfill] The second parent of a
+    commit, etc.
+  \item[\texttt{\textit{commit}\~{}4}\hfill] Short for
     \texttt{\textit{commit}\^{}\^{}\^{}\^{}}---the
     great-great-grandparent of a commit.
   \end{description}
@@ -293,7 +298,7 @@
 \begin{frame}
   \frametitle{Merging}
   \begin{description}[\texttt{git merge \textit{commit}}]
-  \item[\texttt{git merge \textit{commit}}] Merge
+  \item[\texttt{git merge \textit{commit}}\hfill] Merge
     \texttt{\textit{commit}} into \texttt{HEAD}. The index must not
     contain any staged changes.
   \end{description}
@@ -464,13 +469,14 @@ Created commit fc8da7a: Merge branch 'andersk'
 \begin{frame}
   \frametitle{Getting out of trouble}
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
-  \item[\texttt{gitk --all}] The graphical repository browser is immensely
-    useful for visualizing what's going on in your repository.
-  \item[\texttt{git reflog}] Show the \emph{reflog} entries for
+  \item[\texttt{gitk --all}\hfill] The graphical repository browser is
+    immensely useful for visualizing what's going on in your
+    repository.
+  \item[\texttt{git reflog}\hfill] Show the \emph{reflog} entries for
     \texttt{HEAD}.
-  \item[\texttt{git reflog show \textit{ref}}] Show the \emph{reflog}
-    entries for \texttt{\textit{ref}}.
-  \item[\texttt{git reset --hard \textit{commit}}] Resets the
+  \item[\texttt{git reflog show \textit{ref}}\hfill] Show the
+    \emph{reflog} entries for \texttt{\textit{ref}}.
+  \item[\texttt{git reset --hard \textit{commit}}\hfill] Resets the
     \emph{ref} pointed to by \texttt{HEAD}, as well as the index and
     working tree, to \texttt{\textit{commit}}.
   \end{description}
@@ -545,11 +551,13 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{itemize}
 
   \begin{description}[\texttt{git branch -r}]
-  \item[\texttt{git fetch}] Download commits from \texttt{origin}.
-    Each remote branch \texttt{\textit{branch}} will be made available
-    with the name \texttt{origin/\textit{branch}}.
-  \item[\texttt{git branch -r}] List the available remote branches.
-  \item[\texttt{git branch -a}] List the available local and remote branches.
+  \item[\texttt{git fetch}\hfill] Download commits from
+    \texttt{origin}.  Each remote branch \texttt{\textit{branch}} will
+    be made available with the name \texttt{origin/\textit{branch}}.
+  \item[\texttt{git branch -r}\hfill] List the available remote
+    branches.
+  \item[\texttt{git branch -a}\hfill] List the available local and
+    remote branches.
   \end{description}
 
   \begin{itemize}
@@ -568,18 +576,18 @@ Created commit fc8da7a: Merge branch 'andersk'
       origin/\textit{branch}}] Create and switch to a new tracking
     branch named \texttt{\textit{branch}}, set up to track the remote
     branch \texttt{origin/\textit{branch}}.
-  \item[\texttt{git pull}] Update the current tracking branch from
-    \texttt{origin/\textit{branch}}.  Short for \texttt{git fetch; git
-      merge origin/\textit{branch}}.
-  \item[\texttt{git pull --rebase}] Short for \texttt{git fetch; git
-      rebase origin/\textit{branch}}.
-  \item[\texttt{git push}] Push the current tracking branch back to
-    \texttt{origin/\textit{branch}}.  This will only fast-forward the
-    remote branch by default, so you may need to \texttt{git pull}
+  \item[\texttt{git pull}\hfill] Update the current tracking branch
+    from \texttt{origin/\textit{branch}}.  Short for \texttt{git
+      fetch; git merge origin/\textit{branch}}.
+  \item[\texttt{git pull --rebase}\hfill] Short for \texttt{git fetch;
+      git rebase origin/\textit{branch}}.
+  \item[\texttt{git push}\hfill] Push the current tracking branch back
+    to \texttt{origin/\textit{branch}}.  This will only fast-forward
+    the remote branch by default, so you may need to \texttt{git pull}
     first.
-  \item[\texttt{git push origin :\textit{branch}}] Delete the remote
-    branch \texttt{\textit{branch}}.
-  \item[\texttt{git remote prune origin}] Clean up any refs to
+  \item[\texttt{git push origin :\textit{branch}}\hfill] Delete the
+    remote branch \texttt{\textit{branch}}.
+  \item[\texttt{git remote prune origin}\hfill] Clean up any refs to
     branches that have been deleted remotely.
   \end{description}
 \end{frame}
@@ -679,17 +687,17 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \frametitle{Resetting branches}
 
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
-  \item[\texttt{git reset --hard \textit{commit}}] Resets the current
-    \texttt{HEAD}, as well as the index and working tree, to
+  \item[\texttt{git reset --hard \textit{commit}}\hfill] Resets the
+    current \texttt{HEAD}, as well as the index and working tree, to
     \texttt{\textit{commit}}.
-  \item[\texttt{git reset \textit{commit}}] Resets the current
+  \item[\texttt{git reset \textit{commit}}\hfill] Resets the current
     \texttt{HEAD} and index to \textit{commit}, without touching the
     working tree.
-  \item[\texttt{git reset --soft \textit{commit}}] Resets the current
-    \texttt{HEAD} to \textit{commit}, without touching the index or
-    the working tree.
-  \item[\texttt{git commit --amend}] Adds the modifications in the
-    index to the current commit at \texttt{HEAD} ``in place''.
+  \item[\texttt{git reset --soft \textit{commit}}\hfill] Resets the
+    current \texttt{HEAD} to \textit{commit}, without touching the
+    index or the working tree.
+  \item[\texttt{git commit --amend}\hfill] Adds the modifications in
+    the index to the current commit at \texttt{HEAD} ``in place''.
     Approximately equivalent to \texttt{git reset
       HEAD\textasciicircum; git commit}.
   \end{description}
@@ -698,8 +706,8 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \begin{frame}
   \frametitle{Rebasing}
   \begin{description}[\texttt{git rebase \textit{commit}}]
-  \item[\texttt{git rebase \textit{commit}}] Rebase \texttt{HEAD} onto
-    \texttt{\textit{commit}}.
+  \item[\texttt{git rebase \textit{commit}}\hfill] Rebase
+    \texttt{HEAD} onto \texttt{\textit{commit}}.
   \end{description}
 
   \begin{itemize}
@@ -734,9 +742,9 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \begin{frame}
   \frametitle{Interactive rebasing}
   \begin{description}[\texttt{git rebase -i \textit{commit}}]
-  \item[\texttt{git rebase -i \textit{commit}}] Rebase \texttt{HEAD}
-    onto \texttt{\textit{commit}}, letting you interactively edit the
-    resulting history.
+  \item[\texttt{git rebase -i \textit{commit}}\hfill] Rebase
+    \texttt{HEAD} onto \texttt{\textit{commit}}, letting you
+    interactively edit the resulting history.
   \end{description}
 
   \begin{itemize}
@@ -756,16 +764,16 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \frametitle{Advanced rewriting}
 
   \begin{description}[\texttt{git filter-branch}]
-  \item[\texttt{git filter-branch}] Rewrite history by mapping each
-    commit through an arbitrary script.
-  \item[\texttt{.git/info/grafts}] Causes the local repository to
-    pretend that certain commits have different parents than their
+  \item[\texttt{git filter-branch}\hfill] Rewrite history by mapping
+    each commit through an arbitrary script.
+  \item[\texttt{.git/info/grafts}\hfill] Causes the local repository
+    to pretend that certain commits have different parents than their
     real ones.  (\texttt{git filter-branch} can then rewrite the fake
     parents into real ones.)
-  \item[\texttt{git fast-export}] Dump history in a human-readable
-    format, with SHA-1 IDs replaced by symbolic marks, so that it can
-    be edited by hand.
-  \item[\texttt{git fast-import}] Read back commits produced by
+  \item[\texttt{git fast-export}\hfill] Dump history in a
+    human-readable format, with SHA-1 IDs replaced by symbolic marks,
+    so that it can be edited by hand.
+  \item[\texttt{git fast-import}\hfill] Read back commits produced by
     \texttt{git fast-export}.
   \end{description}
 \end{frame}
@@ -776,16 +784,16 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
   \frametitle{Other awesome Git commands}
 
   \begin{description}[\texttt{git format-patch}]
-  \item[\texttt{git bisect}] Easily pinpoint a regression in your
-    history using a repeated bisection search.
-  \item[\texttt{git cvsimport}, \texttt{git svn}] Use Git to work with
-    repositories in other formats.  (I think Git makes a much better
-    CVS or SVN client than the native ones!)
+  \item[\texttt{git bisect}\hfill] Easily pinpoint a regression in
+    your history using a repeated bisection search.
+  \item[\texttt{git cvsimport}, \texttt{git svn}\hfill] Use Git to
+    work with repositories in other formats.  (I think Git makes a
+    much better CVS or SVN client than the native ones!)
   \item[\texttt{git format-patch}, \texttt{git send-email}, \text{git
-      am}] Send and receive Git patches by email.
-  \item[\texttt{git stash}] Quickly stash away and reapply temporary
-    changes while you do other work.
-  \item[\texttt{git submodule}] Manage a group of related Git
+      am}\hfill] Send and receive Git patches by email.
+  \item[\texttt{git stash}\hfill] Quickly stash away and reapply
+    temporary changes while you do other work.
+  \item[\texttt{git submodule}\hfill] Manage a group of related Git
     repositories.
   \end{description}
 \end{frame}
