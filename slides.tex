@@ -512,6 +512,26 @@ Initialized empty Git repository in /tmp/nss_nonlocal/.git/
 \section{Rewriting history}
 
 \begin{frame}
+  \frametitle{Rewriting history}
+
+  \begin{itemize}
+  \item Git includes powerful tools for rewriting history.
+  \item Of course, since modifying a commit changes its SHA-1
+    identifier, by ``rewriting history'' we actually mean
+    ``transforming a sequence of commits into a different sequence of
+    commits''.
+  \item You need to be careful about rewriting commits that others may
+    have already pulled.
+    \begin{itemize}
+    \item By default, Git will prevent you from pushing changes that
+      are not fast-forwards, unless you ask very hard.
+    \end{itemize}
+  \item Rewriting is extremely useful for cleaning up a private branch
+    before making it publicly available.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Rebasing}
   \begin{description}[\texttt{git rebase \textit{commit}}]
   \item[\texttt{git rebase \textit{commit}}] Rebase \texttt{HEAD} onto
