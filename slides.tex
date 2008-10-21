@@ -418,4 +418,66 @@ Created commit fc8da7a: Merge branch 'andersk'
 
 \end{frame}
 
+\section{Collaboration with Git}
+
+\begin{frame}
+  \frametitle{Collaboration with Git}
+  \begin{itemize}
+  \item Git allows bidirectional communication between any pair of
+    repositories.
+  \item Git speaks many protocols.
+    \begin{itemize}
+    \item SSH
+    \item HTTP/HTTPS
+    \item DAV
+    \item Git protocol
+    \item rsync
+    \item direct filesystem access
+    \end{itemize}
+  \item This flexibility lets you implement a wide range of
+    centralized or distributed development models.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Remotes}
+  \begin{itemize}
+  \item A Git repository can be configured with references to any
+    number of \emph{remotes}.
+  \item By default, a newly cloned repository has one remote named
+    \texttt{origin} pointing to the source of the clone.
+  \end{itemize}
+  \begin{footnotesize}
+\begin{semiverbatim}
+\sh{git clone /mit/andersk/Public/git/nss_nonlocal.git}
+Initialized empty Git repository in /tmp/nss_nonlocal/.git/
+\sh{cat nss_nonlocal/.git/config}
+\dots
+[remote "origin"]
+	url = /mit/andersk/Public/git/nss_nonlocal.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+\end{semiverbatim}
+  \end{footnotesize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Fetching}
+  \begin{description}[\texttt{git pull --rebase}]
+  \item[\texttt{git fetch}] Pull commits from the default remote
+    repository.
+  \item[\texttt{git branch -r}] List the remote branches.
+  \item[\texttt{git checkout -b \textit{branch}
+      \textit{remote}/\textit{branch}}] Create a tracking branch
+    \texttt{\textit{branch}} set up to track the remote branch
+    \texttt{\textit{remote}/\textit{branch}}.
+  \item[\texttt{git pull}] Short for \texttt{git fetch; git merge
+      \textit{remote}}.
+  \item[\texttt{git pull --rebase}] Short for \texttt{git fetch; git
+      rebase \textit{remote}}
+  \end{description}
+\end{frame}
+
 \end{document}
