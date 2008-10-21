@@ -299,6 +299,27 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Resolving merge conflicts}
+
+  \begin{itemize}
+  \item \texttt{git merge} works roughly by creating a diff against
+    the common ancestor commit, and applying it against the current
+    \texttt{HEAD}.  (The general case is much more complicated.)
+  \item Sometimes this patch will not apply to the current
+    \texttt{HEAD}.  This situation is called a \emph{merge conflict}.
+    \begin{itemize}
+    \item Git will respond by inserting \emph{conflict markers} into
+      the conflicted files, and asking you resolve the conflict.
+    \item Don't panic!
+    \item To resolve the conflict, edit the conflicted files
+      appropriately and then \texttt{git add} them.
+    \item Alternatively, you can run \texttt{git mergetool} to resolve
+      the conflicts interactively in a graphical diff program.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
   \frametitle{Merging example}
 
@@ -431,6 +452,8 @@ Created commit fc8da7a: Merge branch 'andersk'
 \begin{frame}
   \frametitle{Getting out of trouble}
   \begin{description}[\texttt{git reset --hard \textit{commit}}]
+  \item[\texttt{git reflog}] Show the \emph{reflog} entries for
+    \texttt{HEAD}.
   \item[\texttt{git reflog show \textit{ref}}] Show the \emph{reflog}
     entries for \texttt{\textit{ref}}.
   \item[\texttt{git reset --hard \textit{commit}}] Resets the
@@ -439,8 +462,9 @@ Created commit fc8da7a: Merge branch 'andersk'
   \end{description}
 
   \begin{itemize}
-  \item The reflog tracks changes refs. Whenever a ref is updated to
-    point at a new commit, it gets an entry in the reflog.
+  \item The reflog tracks all local changes to refs.  Whenever a ref
+    is updated to point at a new commit, it gets an entry in the
+    reflog.
   \item If you find yourself somewhere you don't expect, you can
     examine the log or the reflog, and then use \texttt{reset} to get
     back to a known point.
