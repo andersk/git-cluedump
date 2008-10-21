@@ -553,6 +553,10 @@ fc8da7a... master@{0}: commit (merge): Merge branch 'andersk'
     \texttt{origin/\textit{branch}}.  This will only fast-forward the
     remote branch by default, so you may need to \texttt{git pull}
     first.
+  \item[\texttt{git push origin :\textit{branch}}] Delete the remote
+    branch \texttt{\textit{branch}}.
+  \item[\texttt{git remote prune origin}] Clean up any refs to
+    branches that have been deleted remotely.
   \end{description}
 \end{frame}
 
