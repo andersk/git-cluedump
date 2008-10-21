@@ -273,6 +273,23 @@
   description of the syntax).
 \end{frame}
 
+\begin{frame}[fragile]
+  \frametitle{Configuration hints}
+
+  \begin{itemize}
+    \item You should tell Git who you are:
+\begin{semiverbatim}
+\sh{git config --global user.name "\textit{Your Name}"}
+\sh{git config --global user.email "\textit{your@email.edu}"}
+\end{semiverbatim}
+    \item And, if you're feeling colorful,
+\begin{semiverbatim}
+\sh{git config --global color.ui auto}
+\end{semiverbatim}
+    (This configuration is stored in \texttt{\~{}/.gitconfig}.)
+  \end{itemize}
+\end{frame}
+
 \begin{frame}
   \frametitle{Merging}
   \begin{description}[\texttt{git merge \textit{commit}}]
