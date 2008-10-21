@@ -473,15 +473,25 @@ Created commit fc8da7a: Merge branch 'andersk'
   \frametitle{A peek at the reflog}
   {\footnotesize
   \begin{semiverbatim}
+\sh{git reflog}
+{\color{olive}fc8da7a...} HEAD@{0}: commit (merge): Merge branch 'andersk'
+{\color{olive}994be80...} HEAD@{1}: checkout: moving from andersk to master
+{\color{olive}5360c2d...} HEAD@{2}: commit: 5\textonehalf is a better number.
+{\color{olive}7aeb494...} HEAD@{3}: checkout: moving from master to andersk
+{\color{olive}994be80...} HEAD@{4}: merge andersk: Merge made by recursive.
+{\color{olive}383c158...} HEAD@{5}: commit: 6 is a number too.
+{\color{olive}4172330...} HEAD@{6}: checkout: moving from andersk to master
+{\color{olive}7aeb494...} HEAD@{7}: commit: Numbers start at 0.
+{\color{olive}4172330...} HEAD@{8}: checkout: moving from master to andersk
 \sh{git reflog show master}
-fc8da7a... master@{0}: commit (merge): Merge branch 'andersk'
-994be80... master@{1}: merge andersk: Merge made by recursive.
-383c158... master@{2}: commit: 6 is a number too.
-4172330... master@{3}: commit (initial): 1, 2, 3, 4, 5!
+{\color{olive}fc8da7a...} master@{0}: commit (merge): Merge branch 'andersk'
+{\color{olive}994be80...} master@{1}: merge andersk: Merge made by recursive.
+{\color{olive}383c158...} master@{2}: commit: 6 is a number too.
+{\color{olive}4172330...} master@{3}: commit (initial): 1, 2, 3, 4, 5!
 \sh{git reflog show andersk}
-5360c2d... andersk@{0}: commit: 5\textonehalf is a better number.
-7aeb494... andersk@{1}: commit: Numbers start at 0.
-4172330... andersk@{2}: branch: Created from HEAD
+{\color{olive}5360c2d...} andersk@{0}: commit: 5\textonehalf is a better number.
+{\color{olive}7aeb494...} andersk@{1}: commit: Numbers start at 0.
+{\color{olive}4172330...} andersk@{2}: branch: Created from HEAD
   \end{semiverbatim}}
 \end{frame}
 
